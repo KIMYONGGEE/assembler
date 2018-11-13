@@ -27,21 +27,25 @@ int instr_trans(char *op, char *args, char* mcode)
 		case '%':
 			LeftSearch =="reg";
 			break;
-		case '$'
+		case '$':
 			LeftSearch =="immed";
 			break;
-		case '0'
+		case '0':
 			if(c2=='x')
 				LeftSearch = "mem";
-		case '-'
+			break;
+		case '-':
 			if(c2=='0')
 				if(Left[3]=='x')
 					LeftSearch = "memex";
-		case '('
+			break;
+		case '(':
 			if(c2=='%')
 				LeftSearch ="mem";
-		default
+			break;
+		default:
 			LeftSearch = "X";
+			break;
 
 	}
 	c1=Right[0];
@@ -49,23 +53,27 @@ int instr_trans(char *op, char *args, char* mcode)
 	switch(c1)
 	{
 		case '%':
-			ReftSearch =="reg";
+			RightSearch =="reg";
 			break;
-		case '$'
-			ReftSearch =="immed";
+		case '$':
+			RightSearch =="immed";
 			break;
-		case '0'
+		case '0':
 			if(c2=='x')
-				ReftSearch = "mem";
-		case '-'
+				RightSearch = "mem";
+			break;
+		case '-':
 			if(c2=='0')
 				if(Right[3]=='x')
-					ReftSearch = "memex";
-		case '('
+					RightSearch = "memex";
+			break;
+		case '(':
 			if(c2=='%')
 				RightSearch ="mem";
-		default
-			ReftSearch = "X";
+			break;
+		default:
+			RightSearch = "X";
+			break;
 
 	}
 	if(!strcmp(LeftSearch,"reg"))
@@ -78,7 +86,7 @@ int instr_trans(char *op, char *args, char* mcode)
 	else if((!strcmp(LeftSearch,"memex"))&&(!strcmp(LeftSearch,"mem"))&&(!strcmp(RightSearch,"reg")))
 		strcpy(mcode,"8b");
 	else if((!strcmp(LeftSearch,"%eax"))&&(!strcmp(RightSearch,"mem")))
-		strcmp(mcode,"a3")
+		strcmp(mcode,"a3");
 	else if((!strcmp(LeftSearch, "immed"))&&(!strcmp(RightSearch,"reg")))
 	{
 		if(!strcmp(Right,"%eax"))

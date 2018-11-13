@@ -10,7 +10,7 @@ int is_valid(char *op, char *args)
 	char* RightSearch=NULL;
 	char c1,c2;
 	char* Left=NULL;
-	char* Rigt=NULL;
+	char* Right=NULL;
 	
 	if(strcmp(op,'mov') == 0)
 		return 1;
@@ -22,26 +22,26 @@ int is_valid(char *op, char *args)
 		return 0;
 
 	c1=Left[0];
-	c2=Left[1]
+	c2=Left[1];
 	switch(c1)
 	{
 		case '%':
 			LeftSearch =="reg";
 			break;
-		case '$'
+		case '$':
 			LeftSearch =="immed";
 			break;
-		case '0'
+		case '0':
 			if(c2=='x')
 				LeftSearch = "mem";
-		case '-'
+		case '-':
 			if(c2=='0')
 				if(Left[3]=='x')
 					LeftSearch = "mem";
-		case '('
+		case '(':
 			if(c2=='%')
 				LeftSearch ="mem";
-		default
+		default:
 			LeftSearch = "X";
 
 	}
@@ -50,23 +50,23 @@ int is_valid(char *op, char *args)
 	switch(c1)
 	{
 		case '%':
-			ReftSearch =="reg";
+			RightSearch =="reg";
 			break;
-		case '$'
-			ReftSearch =="immed";
+		case '$':
+			RightSearch =="immed";
 			break;
-		case '0'
+		case '0':
 			if(c2=='x')
-				ReftSearch = "mem";
-		case '-'
+				RightSearch = "mem";
+		case '-':
 			if(c2=='0')
 				if(Right[3]=='x')
-					ReftSearch = "mem";
-		case '('
+					RightSearch = "mem";
+		case '(':
 			if(c2=='%')
 				RightSearch ="mem";
-		default
-			ReftSearch = "X";
+		default:
+			RightSearch = "X";
 
 	}
 
