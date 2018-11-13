@@ -26,10 +26,10 @@ int is_valid(char *op, char *args)
 	switch(c1)
 	{
 		case '%':
-			LeftSearch =="reg";
+			LeftSearch ="reg";
 			break;
 		case '$':
-			LeftSearch =="immed";
+			LeftSearch ="immed";
 			break;
 		case '0':
 			if(c2=='x')
@@ -50,10 +50,10 @@ int is_valid(char *op, char *args)
 	switch(c1)
 	{
 		case '%':
-			RightSearch =="reg";
+			RightSearch ="reg";
 			break;
 		case '$':
-			RightSearch =="immed";
+			RightSearch ="immed";
 			break;
 		case '0':
 			if(c2=='x')

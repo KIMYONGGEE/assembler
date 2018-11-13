@@ -25,10 +25,10 @@ int instr_trans(char *op, char *args, char* mcode)
 	switch(c1)
 	{
 		case '%':
-			LeftSearch =="reg";
+			LeftSearch ="reg";
 			break;
 		case '$':
-			LeftSearch =="immed";
+			LeftSearch ="immed";
 			break;
 		case '0':
 			if(c2=='x')
@@ -53,10 +53,10 @@ int instr_trans(char *op, char *args, char* mcode)
 	switch(c1)
 	{
 		case '%':
-			RightSearch =="reg";
+			RightSearch ="reg";
 			break;
 		case '$':
-			RightSearch =="immed";
+			RightSearch ="immed";
 			break;
 		case '0':
 			if(c2=='x')
