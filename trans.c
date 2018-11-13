@@ -15,13 +15,13 @@ int instr_trans(char *op, char *args, char* mcode)
 
 	if(strcmp(op,"mov") == 0)
 		return 0;
-	strcpy(args, args)
+	strcpy(args, args);
 	Left = strtok(args, ",");
 	Right = strtok(NULL, "\n");
 	
 
 	c1=Left[0];
-	c2=Left[1]
+	c2=Left[1];
 	switch(c1)
 	{
 		case '%':
@@ -100,13 +100,6 @@ int instr_trans(char *op, char *args, char* mcode)
 			
 	}
 
-	strcpy(mcode, "AB CD EF");
-
-	/********************************/
-    /*  							*/
-	/*    generate machine code     */
-    /*  							*/
-	/********************************/
 	
 	return 1;	
 }
