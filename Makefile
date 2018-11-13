@@ -6,5 +6,5 @@ check.0 : check.c
 	gcc -o -Wall -c check.c
 trans.0 : trans.c
 	gcc -o -Wall -c trans.c
-clean: main.o check.o trans.o
+clean: 
 	rm -f main.o check.o trans.o myas
