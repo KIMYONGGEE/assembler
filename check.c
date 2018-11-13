@@ -16,7 +16,7 @@ int is_valid(char *op, char *args)
 		return 1;
 	
 	Left = strtok(PUPPIT,",");
-	Right = strtok(NULL," ");
+	Right = strtok(NULL,"\n");
 
 	if(Left==NULL||Right==NULL)
 		return 0;
@@ -38,6 +38,9 @@ int is_valid(char *op, char *args)
 			if(c2=='0')
 				if(Left[3]=='x')
 					LeftSearch = "mem";
+		case '('
+			if(c2=='%')
+				LeftSearch ="mem";
 		default
 			LeftSearch = "X";
 
@@ -57,8 +60,11 @@ int is_valid(char *op, char *args)
 				ReftSearch = "mem";
 		case '-'
 			if(c2=='0')
-				if(Left[3]=='x')
+				if(Right[3]=='x')
 					ReftSearch = "mem";
+		case '('
+			if(c2=='%')
+				RightSearch ="mem";
 		default
 			ReftSearch = "X";
 
