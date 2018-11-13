@@ -34,13 +34,16 @@ int is_valid(char *op, char *args)
 		case '0':
 			if(c2=='x')
 				LeftSearch = "mem";
+			break;
 		case '-':
 			if(c2=='0')
 				if(Left[3]=='x')
 					LeftSearch = "mem";
+			break;
 		case '(':
 			if(c2=='%')
 				LeftSearch ="mem";
+			break;
 		default:
 			LeftSearch = "X";
 
@@ -58,13 +61,16 @@ int is_valid(char *op, char *args)
 		case '0':
 			if(c2=='x')
 				RightSearch = "mem";
+			break;
 		case '-':
 			if(c2=='0')
 				if(Right[3]=='x')
 					RightSearch = "mem";
+			break;
 		case '(':
 			if(c2=='%')
 				RightSearch ="mem";
+			break;
 		default:
 			RightSearch = "X";
 
