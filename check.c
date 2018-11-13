@@ -11,10 +11,11 @@ int is_valid(char *op, char *args)
 	char c1,c2;
 	char* Left=NULL;
 	char* Right=NULL;
-	
+
 	if(strcmp(op,'mov') == 0)
 		return 1;
 	
+	strcpy(PUPPIT, args);
 	Left = strtok(PUPPIT,",");
 	Right = strtok(NULL,"\n");
 

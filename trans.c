@@ -15,7 +15,7 @@ int instr_trans(char *op, char *args, char* mcode)
 
 	if(strcmp(op,"mov") == 0)
 		return 0;
-	strcpy(args, args);
+	//strcpy(args, args);
 	Left = strtok(args, ",");
 	Right = strtok(NULL, "\n");
 	
@@ -45,7 +45,7 @@ int instr_trans(char *op, char *args, char* mcode)
 			break;
 		default:
 			LeftSearch = "X";
-			break;
+			
 
 	}
 	c1=Right[0];
@@ -73,7 +73,7 @@ int instr_trans(char *op, char *args, char* mcode)
 			break;
 		default:
 			RightSearch = "X";
-			break;
+			
 
 	}
 	if(!strcmp(LeftSearch,"reg"))
